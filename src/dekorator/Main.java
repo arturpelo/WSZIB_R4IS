@@ -70,5 +70,15 @@ class Cukier extends DodatkiDekorator {
 }
 
 public class Main {
+    public static void main(String[] args) {
+        Kawa kawa = new KawaPodstawowa();
+        System.out.println(kawa.pobierzOpis() + " cena: " + kawa.koszt() +" zł.");
 
+        kawa = new Cukier(kawa);
+        System.out.println(kawa.pobierzOpis() + " cena: " + kawa.koszt() +" zł.");
+
+        kawa = new Mleko(kawa);
+        System.out.println(kawa.pobierzOpis() + " cena: " + kawa.koszt() +" zł.");
+
+    }
 }

@@ -11,7 +11,7 @@ public class Thermometer {
 
             public void addObserver(Observer observer){
                 observers.add(observer);
-                observer.testTemp(temperature);
+
             };
 
             public void removeObserver(Observer observer){
