@@ -69,6 +69,23 @@ class Cukier extends DodatkiDekorator {
     }
 }
 
+class Ciastko extends DodatkiDekorator {
+
+    public Ciastko (Kawa kawa){
+        super(kawa);
+    }
+
+    @Override
+    public String pobierzOpis(){
+        return kawa.pobierzOpis()+", ciastko";
+    }
+
+    @Override
+    public double koszt(){
+        return kawa.koszt() + 12.30;
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
         Kawa kawa = new KawaPodstawowa();
@@ -79,6 +96,10 @@ public class Main {
 
         kawa = new Mleko(kawa);
         System.out.println(kawa.pobierzOpis() + " cena: " + kawa.koszt() +" zł.");
+
+        kawa = new Ciastko(kawa);
+        System.out.println(kawa.pobierzOpis() + " cena: " + kawa.koszt() +" zł.");
+
 
     }
 }
